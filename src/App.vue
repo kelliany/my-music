@@ -22,7 +22,11 @@
           <ul>
             <li>
               <Icon type="headphone" size="20"></Icon>
-              <div class="menu-name">我的音乐</div>
+              <div class="menu-name">
+                <span>我的音乐</span>
+                <span>(28)</span>
+                <Icon type="ios-volume-high" class="right"></Icon>
+              </div>
             </li>
             <li>
               <Icon type="clock" size="20"></Icon>
@@ -40,7 +44,14 @@
         </div>
         <div class="music-list">
           <ul>
-            
+            <li>
+              <Icon type="ios-arrow-right" size="24"></Icon>
+              <div class="list-detail">我创建的歌单</div>
+            </li>
+            <li>
+              <Icon type="ios-arrow-right" size="24"></Icon>
+              <div class="list-detail">我收藏的歌单</div>
+            </li>
           </ul>
         </div>
       </Content>
@@ -109,11 +120,31 @@ export default {
   left: 0;
 }
 
+
 .menu-list li .menu-name {
   
   padding: 10px 0;
   margin-left: 40px;
   border-bottom:1px solid #E7E8E8;
+}
+.menu-list li .menu-name .right {
+  position: absolute;
+  right: 20px;
+  
+}
+.music-list li {
+  background: #E1E1E1;
+  position: relative;
+}
+.music-list li .ivu-icon {
+  position: absolute;
+  left: 10px;
+  top: 2px;
+}
+.music-list .list-detail {
+  padding: 5px 0;
+  margin-left: 30px;
+  text-align: left;
 }
 
 .ivu-layout-footer {
