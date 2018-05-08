@@ -25,16 +25,22 @@
               <div class="menu-name">
                 <span>我的音乐</span>
                 <span>(28)</span>
-                <Icon type="ios-volume-high" class="right"></Icon>
+                <Icon type="ios-volume-high" class="right" size="20"></Icon>
               </div>
             </li>
             <li>
               <Icon type="clock" size="20"></Icon>
-              <div class="menu-name">最近播放</div>
+              <div class="menu-name">
+                <span>最近播放</span>
+                <span>(10)</span>
+              </div>
             </li>
             <li>
               <Icon type="radio-waves" size="20"></Icon>
-              <div class="menu-name">我的电台</div>
+              <div class="menu-name">
+                <span>我的电台</span>
+                <span>(15)</span>
+              </div>
             </li>
             <li>
               <Icon type="ios-star" size="20"></Icon>
@@ -129,7 +135,9 @@ export default {
 }
 .menu-list li .menu-name .right {
   position: absolute;
-  right: 20px;
+  right: 10px;
+  top: 2px;
+  left:auto;
   
 }
 .music-list li {
