@@ -25,7 +25,7 @@
               <div class="menu-name">
                 <span>我的音乐</span>
                 <span>(28)</span>
-                <Icon type="ios-volume-high" class="right" size="20"></Icon>
+                <Icon type="ios-volume-high" class="right" size="24"></Icon>
               </div>
             </li>
             <li>
@@ -44,7 +44,9 @@
             </li>
             <li>
               <Icon type="ios-star" size="20"></Icon>
-              <div class="menu-name">我的收藏</div>
+              <div class="menu-name">
+                <span>我的收藏</span>
+              </div>
             </li>
           </ul>
         </div>
@@ -52,11 +54,17 @@
           <ul>
             <li>
               <Icon type="ios-arrow-right" size="24"></Icon>
-              <div class="list-detail">我创建的歌单</div>
+              <div class="list-detail">
+                <span>我创建的歌单</span>
+                <Icon v-on:click="showList" type="ios-gear-outline"  class="right" size="20"></Icon>
+              </div>
             </li>
             <li>
               <Icon type="ios-arrow-right" size="24"></Icon>
-              <div class="list-detail">我收藏的歌单</div>
+              <div class="list-detail">
+                <span>我收藏的歌单</span>
+                <Icon type="ios-gear-outline"  class="right" size="20"></Icon>
+              </div>
             </li>
           </ul>
         </div>
@@ -136,9 +144,8 @@ export default {
 .menu-list li .menu-name .right {
   position: absolute;
   right: 10px;
-  top: 2px;
-  left:auto;
-  
+  top: 0;
+  left:auto;  
 }
 .music-list li {
   background: #E1E1E1;
@@ -154,11 +161,19 @@ export default {
   margin-left: 30px;
   text-align: left;
 }
+.music-list li .list-detail .right {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  left:auto;  
+}
 
 .ivu-layout-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
 }
+
+
 
 </style>
