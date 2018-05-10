@@ -13,8 +13,7 @@
            </div>
            <div class="search">
              <Icon type="ios-search-strong" size="30" color="white"></Icon>
-           </div>
-           
+           </div>          
          </div>
       </Header>
       <Content>
@@ -53,12 +52,25 @@
         <div class="music-list">
           <ul>
             <li>
-              <Icon type="ios-arrow-right" size="24"></Icon>
+              <Icon :class="{ 'rotate': isRotate}"  @click.native="toggleIsRotate" type="ios-arrow-right" size="24"></Icon>
               <div class="list-detail">
                 <span>我创建的歌单</span>
-                <Icon v-on:click="showList" type="ios-gear-outline"  class="right" size="20"></Icon>
+                <Icon  type="ios-gear-outline"  class="right" size="20"></Icon>
               </div>
             </li>
+            <div class="song-list">
+              <ul>
+                <li>
+                  <div class="song-card">
+                      <img src="http://oiq8j9er1.bkt.clouddn.com/music_far%20away.jpg" alt="" class="sheetimg">
+                      <div class="song-list-name">
+                        <div>我喜欢的音乐</div>
+                        <div>30首歌曲</div>
+                      </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
             <li>
               <Icon type="ios-arrow-right" size="24"></Icon>
               <div class="list-detail">
@@ -70,14 +82,23 @@
         </div>
       </Content>
       <Footer></Footer>
-    </Layout>
-    
+    </Layout>   
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      isRotate: false
+    }   
+  },
+  methods: {
+    toggleIsRotate: function() {
+      this.isRotate = !this.isRotate
+    }
+  }  
 }
 </script>
 
@@ -174,6 +195,21 @@ export default {
   width: 100%;
 }
 
+.rotate {
+  transform: rotate(90deg);
+  -webkit-transition: transform .25s linear;
+  -moz-transition: transform .25s linear;
+  -o-transition: transform .25s linear;
+  transition: transform .25s linear;
+}
 
+.song-list li{
+  background: #ffffff;
+}
+
+.sheetimg {
+  width: 50px;
+  height: 50px;
+}
 
 </style>
