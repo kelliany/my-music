@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
+import bottom from '@/components/bottom.vue'
 
 Vue.use(iView)
 Vue.config.productionTip = false
@@ -13,6 +14,9 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: { 
+    App ,
+    bottom
+  },
   template: '<App/>'
 })

@@ -58,13 +58,13 @@
                 <Icon  type="ios-gear-outline"  class="right" size="20"></Icon>
               </div>
             </li>
-            <div class="song-list">
+            <div class="song-list" v-show="isRotate">
               <ul>
                 <li>
-                  <div class="song-card">
+                  <div class="song-card" >
                       <img src="http://oiq8j9er1.bkt.clouddn.com/music_far%20away.jpg" alt="" class="sheetimg">
                       <div class="song-list-name">
-                        <div>我喜欢的音乐</div>
+                        <div class="label">我喜欢的音乐</div>
                         <div>30首歌曲</div>
                       </div>
                   </div>
@@ -81,12 +81,13 @@
           </ul>
         </div>
       </Content>
-      <Footer></Footer>
+      <bottom></bottom>
     </Layout>   
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'App',
   data() {
@@ -94,6 +95,7 @@ export default {
       isRotate: false
     }   
   },
+  
   methods: {
     toggleIsRotate: function() {
       this.isRotate = !this.isRotate
@@ -102,7 +104,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -174,9 +176,10 @@ export default {
 }
 .music-list li .ivu-icon {
   position: absolute;
-  left: 10px;
+  left: @left;
   top: 2px;
 }
+@left: 10px;
 .music-list .list-detail {
   padding: 5px 0;
   margin-left: 30px;
@@ -207,9 +210,23 @@ export default {
   background: #ffffff;
 }
 
+.song-card {
+  display: flex;
+  font-size: 14px;
+}
 .sheetimg {
   width: 50px;
   height: 50px;
 }
+.song-list-name {
+  height: 50px;
+  flex: auto;
+  text-align: left;
+  margin: 0 5px;
+}
+.song-list-name .label {
+  margin-top: 5px;
+}
+
 
 </style>
