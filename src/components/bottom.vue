@@ -8,3 +8,13 @@
         name : 'bottom'
     }
 </script>
+<style lang="less">
+#bottom{
+    display: flex;
+}
+img{
+    width: 36px;
+    height: 36px;
+    margin:5px;
+}
+</style>

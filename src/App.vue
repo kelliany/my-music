@@ -87,7 +87,7 @@
 </template>
 
 <script>
-
+import bottom from './components/bottom.vue'
 export default {
   name: 'App',
   data() {
@@ -95,7 +95,9 @@ export default {
       isRotate: false
     }   
   },
-  
+  components:{
+    bottom
+  },
   methods: {
     toggleIsRotate: function() {
       this.isRotate = !this.isRotate
@@ -227,6 +229,11 @@ export default {
 .song-list-name .label {
   margin-top: 5px;
 }
-
+#bottom {
+  position: fixed;
+  height: 46px;
+  bottom: 0;
+  width:100%
+}
 
 </style>
