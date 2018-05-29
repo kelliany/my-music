@@ -82,6 +82,18 @@
         </div>
       </Content>
       <bottom></bottom>
+      <div class="play-list">
+        <div class="play-list-name">
+          <Icon type="ios-loop"></Icon>
+          <span>列表循环(93)</span>
+        </div>
+        <div class="option-combin">
+          <div>
+            <Icon type="ios-plus-outline"></Icon>
+            <span>收藏</span>
+          </div>
+        </div>
+      </div>
     </Layout>   
   </div>
 </template>
@@ -235,5 +247,11 @@ export default {
   bottom: 0;
   width:100%
 }
-
+.play-list{
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  font-size: 14px;
+  display: flex;
+}
 </style>
