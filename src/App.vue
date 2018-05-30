@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Layout>
+    <Layout v-show="show" :changeShow = "changeShow(show)">
       <Header>
          <div class='header'>
            <div class="slider-icon">
@@ -82,18 +82,30 @@
         </div>
       </Content>
       <bottom></bottom>
-      <div class="play-list">
-        <div class="play-list-name">
-          <Icon type="ios-loop"></Icon>
-          <span>列表循环(93)</span>
-        </div>
-        <div class="option-combin">
-          <div>
-            <Icon type="ios-plus-outline"></Icon>
-            <span>收藏</span>
+      <!-- <div class="play-list" >
+        <div class="title">
+          <div class="play-list-name">
+            <Icon type="ios-loop"></Icon>
+            <span>列表循环(93)</span>
           </div>
-        </div>
-      </div>
+          <div class="right">
+            <div class="star">
+              <Icon type="ios-plus-outline"></Icon>
+              <span>收藏</span>
+            </div>
+            <div class="delete">
+              <Icon type="ios-trash-outline"></Icon>
+              <span>清空</span>
+            </div>
+          </div>          
+        </div> 
+        <ul class="content">
+          <li>
+            <Icon type="ios-volume-high" size="24"></Icon>
+            <span>小酒窝-林俊杰,蔡卓妍</span>
+          </li>
+        </ul>
+      </div> -->
     </Layout>   
   </div>
 </template>
@@ -104,7 +116,8 @@ export default {
   name: 'App',
   data() {
     return {
-      isRotate: false
+      isRotate: false,
+      show:''
     }   
   },
   components:{
@@ -113,6 +126,9 @@ export default {
   methods: {
     toggleIsRotate: function() {
       this.isRotate = !this.isRotate
+    },
+    changeShow: function(show){
+      this.show = show
     }
   }  
 }
@@ -250,8 +266,30 @@ export default {
 .play-list{
   position: fixed;
   bottom: 0;
-  z-index: 100;
+  // z-index: 100;
   font-size: 14px;
-  display: flex;
+  background-color: #fff;
+  opacity: 0.8;
+  width: 100%;
 }
+.play-list {
+  .title{
+    width: 100%;
+    height:50px;
+    .play-list-name{
+      display: inline-block;
+      line-height: 50px;
+      padding: 0 10px;
+    }
+    .right{
+      float: right;
+      margin-right: 10px;
+      .star, .delete{
+        .play-list-name;
+      }
+    }
+  }
+ 
+}
+
 </style>

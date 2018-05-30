@@ -7,13 +7,25 @@
         </div>
         <div class="button-combin">
             <Icon type="play" size="24"></Icon>
-            <Icon type="ios-list-outline" size="24"></Icon>
+            <Icon @click.native="toggleShowlist" type="ios-list-outline" size="24"></Icon>
         </div>
     </div>
 </template>
 <script>
     export default {
-        name : 'bottom'
+        name : 'bottom',
+        data() {
+            return{
+                show: true
+            }
+            
+        },
+        methods: {
+            toggleShowlist: function(){
+                this.show = true
+                this.$emit('changeShow',this.show)
+            }
+        }
     }
 </script>
 <style lang="less">
