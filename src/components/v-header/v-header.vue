@@ -1,7 +1,7 @@
 <template>
     <div class='header'>
         <div class="slider-icon">
-            <Icon  type="navicon-round" size="20" color="white"></Icon>
+            <Icon  type="navicon-round" size="20" color="white" @click.native="showSliderMenu"></Icon>
         </div>
         <div class="menu">
             <Icon type="ios-musical-notes" size="30" color="white"></Icon>
@@ -14,8 +14,14 @@
     </div>
 </template>
 <script>
+    import Bus from '../../bus.js'
     export default {
-        name:'v-header'
+        name:'v-header',
+        methods: {
+            showSliderMenu: function() {
+                Bus.$emit('change','xx')
+            }
+        }
     }
 </script>
 <style lang="less">

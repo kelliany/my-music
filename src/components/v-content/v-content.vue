@@ -35,7 +35,7 @@
         <div class="music-list">
           <ul>
             <li>
-              <Icon :class="{'rotate': isRotate}"  @click="toggleIsRotate" type="ios-arrow-right" size="24"></Icon>
+              <Icon :class="{'rotate': isRotate}"  @click.native="toggleIsRotate" type="ios-arrow-right" size="24"></Icon>
               <div class="list-detail">
                 <span>我创建的歌单</span>
                 <Icon  type="ios-gear-outline"  class="right" size="20"></Icon>
@@ -68,9 +68,9 @@
 <script>
     export default {
         name:'v-content',
-        date() {
+        data () {
             return {
-                isRotate: 'false',
+                isRotate: false,
             }
         },
         methods: {
