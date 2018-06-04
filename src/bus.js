@@ -1,2 +1,2 @@
 import Vue from 'vue'
-export let Bus = new Vue()
+export default new Vue()

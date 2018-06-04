@@ -1,6 +1,6 @@
 <template>
     <div class="slider" v-show="isShow">
-        hello
+        
     </div>
 </template>
 <script>
@@ -12,16 +12,25 @@ export default {
             isShow: false
         }
     },
-    methods: {
-        mounted() {
-            Bus.$on('change', function(get) {
-                console.log(get)
-            })
-        }
+    
+    mounted() {
+        let self = this
+        Bus.$on('change', function(get) {
+            self.isShow = get            
+        })
     }
+    
 }
 </script>
 <style lang="less">
-
+ .slider{
+     background-color: #333;
+     opacity: 0.8;
+     position: absolute; 
+     top: 0;
+     height: 100%;
+     width: 60%;
+     z-index: 2;
+ }
 </style>
 

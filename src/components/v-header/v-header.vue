@@ -19,7 +19,7 @@
         name:'v-header',
         methods: {
             showSliderMenu: function() {
-                Bus.$emit('change','xx')
+                Bus.$emit('change',true)
             }
         }
     }
