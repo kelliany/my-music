@@ -28,6 +28,7 @@
               <Icon type="ios-star" size="20"></Icon>
               <div class="menu-name">
                 <span>我的收藏</span>
+
               </div>
             </li>
           </ul>
@@ -57,7 +58,7 @@
             <li>
               <Icon type="ios-arrow-right" size="24"></Icon>
               <div class="list-detail">
-                <span>我收藏的歌单</span>
+                <span>我收藏的歌单{{text}}</span>
                 <Icon type="ios-gear-outline"  class="right" size="20"></Icon>
               </div>
             </li>
@@ -66,17 +67,30 @@
     </div>  
 </template>
 <script>
+    import api from '../../axios/api.js'
+
     export default {
         name:'v-content',
         data () {
             return {
                 isRotate: false,
+                text:''
             }
+        },
+        created() {
+          this.setNewsApi()
         },
         methods: {
              toggleIsRotate: function() {
                 this.isRotate = !this.isRotate
             },
+            setNewsApi: function() {
+              api.JH_news('/content')
+               .then(res => {
+                 console.log(res);
+                 this.text = res.articles[0].title
+               })
+            }
         }
     }
 </script>

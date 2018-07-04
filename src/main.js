@@ -10,12 +10,19 @@ import 'iview/dist/styles/iview.css'
 Vue.use(iView)
 Vue.config.productionTip = false
 
+// 引入mock
+require('./mock.js')
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { 
+  components: {
     App
   },
   template: '<App/>'
+})
+
+Vue.filter('getYMD', function (input) {
+  return input.split(' ')[0]
 })
